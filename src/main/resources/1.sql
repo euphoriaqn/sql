@@ -1,50 +1,18 @@
 /* Добавить разаработчикам поле (salary - зарплата).  */
 ALTER TABLE developers ADD salary DECIMAL;
 
-UPDATE developers
-SET salary = 1500
-WHERE id = 1;
-
-UPDATE developers
-SET salary = 2000
-WHERE id = 2;
-
-UPDATE developers
-SET salary = 2500
-WHERE id = 3;
-
-UPDATE developers
-SET salary = 2000
-WHERE id = 4;
-
-UPDATE developers
-SET salary = 2200
-WHERE id = 5;
-
-UPDATE developers
-SET salary = 1800
-WHERE id = 6;
-
-UPDATE developers
-SET salary = 2150
-WHERE id = 7;
-
-UPDATE developers
-SET salary = 3200
-WHERE id = 8;
-
-UPDATE developers
-SET salary = 1700
-WHERE id = 9;
-
-UPDATE developers
-SET salary = 900
-WHERE id = 10;
-
-UPDATE developers
-SET salary = 1350
-WHERE id = 11;
-
-UPDATE developers
-SET salary = 2340
-WHERE id = 12;
+UPDATE developers set salary=(Case
+  WHEN id=1 THEN 1500
+  WHEN id=2 THEN 2000
+  WHEN id=3 THEN 2500
+  WHEN id=4 THEN 2000
+  WHEN id=5 THEN 2200
+  WHEN id=6 THEN 1800
+  WHEN id=7 THEN 2150
+  WHEN id=8 THEN 3200
+  WHEN id=9 THEN 1700
+  WHEN id=10 THEN 900
+  WHEN id=11 THEN 1350
+  WHEN id=12 THEN 2340
+  END)
+WHERE id between 1 and 12

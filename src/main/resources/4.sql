@@ -2,38 +2,15 @@
 
 ALTER TABLE projects ADD cost DECIMAL;
 
-UPDATE projects
-SET cost = 25000
-WHERE id = 1;
-
-UPDATE projects
-SET cost = 37000
-WHERE id = 2;
-
-UPDATE projects
-SET cost = 15000
-WHERE id = 3;
-
-UPDATE projects
-SET cost = 40000
-WHERE id = 4;
-
-UPDATE projects
-SET cost = 22000
-WHERE id = 5;
-
-UPDATE projects
-SET cost = 14000
-WHERE id = 6;
-
-UPDATE projects
-SET cost = 50000
-WHERE id = 7;
-
-UPDATE projects
-SET cost = 26000
-WHERE id = 8;
-
-UPDATE projects
-SET cost = 17500
-WHERE id = 9;
+UPDATE projects set cost=(Case
+WHEN id=1 THEN 25000
+WHEN id=2 THEN 37000
+WHEN id=3 THEN 15000
+WHEN id=4 THEN 40000
+WHEN id=5 THEN 22000
+WHEN id=6 THEN 14000
+WHEN id=7 THEN 50000
+WHEN id=8 THEN 26000
+WHEN id=9 THEN 17500
+END)
+WHERE id between 1 and 9
